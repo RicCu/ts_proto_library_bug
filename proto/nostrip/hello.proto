@@ -1,0 +1,5 @@
+syntax = "proto3";
+package nostrip.Proto;
+message Hello { string hello = 1; }
+service HelloService { rpc SayHello(SayHelloRequest) returns (Hello); }
+message SayHelloRequest {}

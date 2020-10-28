@@ -1,0 +1,13 @@
+load("@npm//@bazel/labs:index.bzl", "ts_proto_library")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "hello_proto",
+    srcs = ["hello.proto"],
+    strip_import_prefix = "/proto",
+)
+
+ts_proto_library(
+    name = "strip",
+    proto = ":hello_proto",
+)
